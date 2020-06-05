@@ -58,16 +58,14 @@ app.post('/adddeployment',async(req,res)=>
   let {id} = await middleware.AddDeployments(req);
   res.status(200);
   res.send({Data:await middleware.GetDeployments()})
-	//res.send(JSON.stringify({Data:id!=undefined ? await middleware.GetDeployments():" Something Went Wrong please try again"}));
-	res.end();
+  res.end();
 })       
 
 app.post("/deletedeployment",async(req,res)=>
 {
    let {deletedCount} = await middleware.deleteDeployments(req);
    res.status(200);
-  // res.send(JSON.stringify({Data:deletedCount >= 1 ? await middleware.GetDeployments() : " Something Went Wrong please try again"}));
-  res.send({Data:await middleware.GetDeployments()})
+   res.send({Data:await middleware.GetDeployments()})
    res.end();
 
 })
