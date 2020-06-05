@@ -71,5 +71,5 @@ app.post("/deletedeployment",async(req,res)=>
    res.end();
 
 })
-app.listen(8000);
+app.listen(process.env.PORT||8000);
 
